@@ -1,5 +1,4 @@
-import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
-import { Sum } from "./sum.ts";
+import { assertEquals, Sum } from "../types.ts";
 
 Deno.test("calculation sum", () => {
   assertEquals(2, Sum.calc(1, 1));
