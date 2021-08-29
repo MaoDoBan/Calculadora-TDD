@@ -4,6 +4,8 @@ import { Sum } from "./server/sum.ts";
 import { Subtraction } from "./server/subtraction.ts";
 import { Multiplication } from "./server/multiplication.ts";
 import { Division } from "./server/division.ts";
+import { Exponentiation } from "./server/exponentiation.ts";
+import { Logarithm } from "./server/logarithm.ts";
 
 export {
   assertEquals,
@@ -11,5 +13,7 @@ export {
   Sum,
   Subtraction,
   Multiplication,
-  Division
+  Division,
+  Exponentiation,
+  Logarithm
 };

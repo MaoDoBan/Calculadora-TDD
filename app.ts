@@ -2,7 +2,9 @@ import {
   Sum,
   Subtraction,
   Multiplication,
-  Division
+  Division,
+  Exponentiation,
+  Logarithm
 } from "./types.ts";
 
 const example = "! Exemplo: 2 + 2";
@@ -12,10 +14,12 @@ export class App{
 
     if(command.length != 3) return "Só aceito 3 argumentos! Exemplo: 2 + 2";
     const operations: { [symbol: string]: (n1: number, n2: number) => number } = {
-      "+": Sum.calc,
-      "-": Subtraction.calc,
-      "*": Multiplication.calc,
-      "/": Division.calc
+      "+":   Sum.calc,
+      "-":   Subtraction.calc,
+      "*":   Multiplication.calc,
+      "/":   Division.calc,
+      "^":   Exponentiation.calc,
+      "log": Logarithm.calc
     };
 
     const [ number1str, operation, number2str ] = command;

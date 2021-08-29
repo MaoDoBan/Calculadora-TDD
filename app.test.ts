@@ -12,6 +12,10 @@ Deno.test("app.run() operations with normal conditions", () => {
   assertEquals("-9", App.run(["-3", "*", "3"]));
   assertEquals("4",  App.run(["8",  "/", "2"]));
   assertEquals("0",  App.run(["0",  "/", "2"]));
+  assertEquals("512",App.run(["2",  "^", "9"]));
+  assertEquals("81", App.run(["3",  "^", "4"]));
+  assertEquals("9",  App.run(["2",  "log", "512"]));
+  assertEquals("4",  App.run(["10", "log", "10000"]));
 });
 
 Deno.test("app.run() unexpected inputs", () => {
@@ -30,7 +34,14 @@ Deno.test("app.run() unexpected inputs", () => {
   assertEquals(errorFirstArg, App.run(["+", "+", "+"]));
   assertEquals("O terceiro argumento precisa ser um número"+ex, App.run(["2", "+", "+"]));
   
-  assertEquals("Resultado indefinido!", App.run(["0", "/", "0"]));
-  assertEquals("Resultado indefinido!", App.run(["2", "/", "0"]));
+  assertEquals("Resultado indefinido!", App.run(["0",  "/", "0"]));
+  assertEquals("Resultado indefinido!", App.run(["2",  "/", "0"]));
   assertEquals("Resultado indefinido!", App.run(["-2", "/", "0"]));
+  
+  assertEquals("Resultado indefinido!", App.run(["0", "^", "-2"]));
+  
+  assertEquals("Resultado indefinido!", App.run(["0", "log", "0"]));
+  assertEquals("Resultado indefinido!", App.run(["1", "log", "1"]));
+  assertEquals("Resultado indefinido!", App.run(["1", "log", "5"]));
+  assertEquals("Resultado indefinido!", App.run(["1", "log", "0"]));
 });
