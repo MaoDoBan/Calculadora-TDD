@@ -4,8 +4,14 @@ import {
 } from "./types.ts";
 
 Deno.test("app.run() operations with normal conditions", () => {
-  assertEquals("4", App.run(["2", "+", "2"]));
-  assertEquals("0", App.run(["2", "-", "2"]));
+  assertEquals("4",  App.run(["2",  "+", "2"]));
+  assertEquals("0",  App.run(["-2", "+", "2"]));
+  assertEquals("0",  App.run(["2",  "-", "2"]));
+  assertEquals("-4", App.run(["-2", "-", "2"]));
+  assertEquals("9",  App.run(["3",  "*", "3"]));
+  assertEquals("-9", App.run(["-3", "*", "3"]));
+  assertEquals("4",  App.run(["8",  "/", "2"]));
+  assertEquals("0",  App.run(["0",  "/", "2"]));
 });
 
 Deno.test("app.run() unexpected inputs", () => {
@@ -23,4 +29,8 @@ Deno.test("app.run() unexpected inputs", () => {
   assertEquals(errorFirstArg, App.run(["+", "+", "2"]));
   assertEquals(errorFirstArg, App.run(["+", "+", "+"]));
   assertEquals("O terceiro argumento precisa ser um número"+ex, App.run(["2", "+", "+"]));
+  
+  assertEquals("Resultado indefinido!", App.run(["0", "/", "0"]));
+  assertEquals("Resultado indefinido!", App.run(["2", "/", "0"]));
+  assertEquals("Resultado indefinido!", App.run(["-2", "/", "0"]));
 });
