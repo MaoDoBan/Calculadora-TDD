@@ -1,6 +1,6 @@
 # Calculadora com back-end Deno
 
-### Versão 0.5.0-beta
+### Versão 0.5.1-beta
 
 Projeto para treinar TDD em TypeScript no Deno.
 
