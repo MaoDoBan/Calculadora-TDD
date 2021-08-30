@@ -1,4 +1,5 @@
-import { Calculator } from "./types.ts";
+import { Calculator, Server } from "./types.ts";
 
-console.log( Calculator.calc(Deno.args) );
+//console.log( Calculator.calc(Deno.args) );
 
+Server.run();

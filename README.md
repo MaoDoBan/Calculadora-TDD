@@ -1,6 +1,6 @@
 # Calculadora com back-end Deno
 
-### Versão 0.5.1-beta
+### Versão 0.6.2-beta
 
 Projeto para treinar TDD em TypeScript no Deno.
 
@@ -47,4 +47,5 @@ cada commit tem o nome da(s) classe(s) (ou arquivo(s)) afetado(a)(s)
 ---
 
 ### Comandos para rodar o back-end:
-deno run --allow-net src/app.ts
+deno run --allow-net app.ts
+deno run --allow-net --allow-read server.ts

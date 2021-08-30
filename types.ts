@@ -1,11 +1,12 @@
 import { assertEquals } from "https://deno.land/std@0.106.0/testing/asserts.ts";
-import { Sum } from "./server/sum.ts";
-import { Subtraction } from "./server/subtraction.ts";
-import { Multiplication } from "./server/multiplication.ts";
-import { Division } from "./server/division.ts";
-import { Exponentiation } from "./server/exponentiation.ts";
-import { Logarithm } from "./server/logarithm.ts";
-import { Calculator } from "./server/calculator.ts";
+import { Sum } from "./server/calculator/sum.ts";
+import { Subtraction } from "./server/calculator/subtraction.ts";
+import { Multiplication } from "./server/calculator/multiplication.ts";
+import { Division } from "./server/calculator/division.ts";
+import { Exponentiation } from "./server/calculator/exponentiation.ts";
+import { Logarithm } from "./server/calculator/logarithm.ts";
+import { Calculator } from "./server/calculator/calculator.ts";
+import { Server } from "./server/server.ts";
 
 export {
   assertEquals,
@@ -15,5 +16,6 @@ export {
   Division,
   Exponentiation,
   Logarithm,
-  Calculator
+  Calculator,
+  Server
 };
