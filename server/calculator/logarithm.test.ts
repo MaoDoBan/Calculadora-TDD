@@ -1,4 +1,4 @@
-import { assertEquals, Logarithm } from "../types.ts";
+import { assertEquals, Logarithm } from "../../types.ts";
 
 Deno.test("calculation logarithm", () => {
   assertEquals(3, Logarithm.calc(2, 8));

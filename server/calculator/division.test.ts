@@ -1,4 +1,4 @@
-import { assertEquals, Division } from "../types.ts";
+import { assertEquals, Division } from "../../types.ts";
 
 Deno.test("calculation division", () => {
   assertEquals(1, Division.calc(1, 1));

@@ -1,4 +1,4 @@
-import { assertEquals, Exponentiation } from "../types.ts";
+import { assertEquals, Exponentiation } from "../../types.ts";
 
 Deno.test("calculation potentiation", () => {
   assertEquals(8, Exponentiation.calc(2, 3));

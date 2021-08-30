@@ -5,7 +5,7 @@ import {
   Division,
   Exponentiation,
   Logarithm
-} from "../types.ts";
+} from "../../types.ts";
 
 const example = "! Exemplo: 2 + 2";
 

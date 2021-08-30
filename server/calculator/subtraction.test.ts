@@ -1,4 +1,4 @@
-import { assertEquals, Subtraction } from "../types.ts";
+import { assertEquals, Subtraction } from "../../types.ts";
 
 Deno.test("calculation subtraction", () => {
   assertEquals(0, Subtraction.calc(1, 1));

@@ -1,7 +1,7 @@
 import {
   assertEquals,
   Calculator
-} from "../types.ts";
+} from "../../types.ts";
 
 Deno.test("Calculator.calc() operations with normal conditions", () => {
   assertEquals("4",  Calculator.calc(["2",  "+", "2"]));
