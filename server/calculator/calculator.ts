@@ -1,22 +1,22 @@
 import {
-  Sum,
-  Subtraction,
-  Multiplication,
-  Division,
-  Exponentiation,
-  Logarithm
+  sum,
+  subtraction,
+  multiplication,
+  division,
+  exponentiation,
+  logarithm
 } from "../../types.ts";
 
 const example = "! Exemplo: 2 + 2";
 
 export class Calculator{
   static operations: { [symbol: string]: (n1: number, n2: number) => number } = {
-    "+":   Sum.calc,
-    "-":   Subtraction.calc,
-    "*":   Multiplication.calc,
-    "/":   Division.calc,
-    "^":   Exponentiation.calc,
-    "log": Logarithm.calc
+    "+":   sum,
+    "-":   subtraction,
+    "*":   multiplication,
+    "/":   division,
+    "^":   exponentiation,
+    "log": logarithm
   };
 
   static calc(command: string[]): string{
