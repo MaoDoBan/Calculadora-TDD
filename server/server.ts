@@ -1,4 +1,5 @@
-import { serve } from "https://deno.land/std@0.106.0/http/server.ts";
+import { serve }     from "https://deno.land/std@0.106.0/http/server.ts";
+import { serveFile } from "https://deno.land/std@0.106.0/http/file_server.ts";
 
 export class Server{
   static async run(){
@@ -6,11 +7,12 @@ export class Server{
     console.log("Server running on: http://localhost:8000/");
 
     for await (const request of server) {
-      if(request.url === "/"){
-        request.respond({
-          status: 200,
-          body: await Deno.open("./client/index.html")
-        });
+      try{
+        console.log("path:",request.url);
+        const content = await serveFile(request, `./client${request.url}`);
+        request.respond(content);
+      }catch(error){
+        console.error(error);
       }
     }
   }
