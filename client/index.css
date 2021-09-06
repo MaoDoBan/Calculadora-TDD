@@ -1,39 +1,72 @@
 body{
-  background: hsl(240, 8%, 22%);
+  background: hsl(216, 23%, 17%);
+  font-family: Quicksand;
 }
 
 .main{
-  max-width: 760px;
+  max-width: 488px;
   margin: 0 auto;
-  background: hsl(270, 11%, 22%);
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid #888;
+  background: hsl(225, 10%, 15%);
+  padding: 8px;
+  border: 1px solid hsl(225, 10%, 11%);
 }
 
-h3{
-  text-align: center;
-  color: hsl(194, 100%, 50%);
+.title{
+  text-align: left;
+  color: hsl(233, 77%, 88%);
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-left: 7px;
 }
 
 .calculator{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 4px;
+  grid-template-rows: repeat(6, minmax(52px, auto));
+  grid-gap: 3px;
 }
-.calculator div{
-  background: hsl(0, 0%, 35%);
-  text-align: center;
+.calculator button{
+  color: white;
+  border-style: none;
+  font-size: 24px;
+}
+.calculator button:hover{
+  background: hsl(240, 1%, 46%);
 }
 
 .display{
   grid-column: 1 / 6;
-  background: hsl(0, 0%, 25%) !important;
+  background: hsl(222, 8%, 13%) !important;
   color: white;
   text-align: right !important;
+  padding: 6px 8px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.but{
+  background: hsl(210, 9%, 9%);
+}
+
+.num{
+  background: hsl(240, 12%, 3%);
 }
 
 .sum{
   grid-row: 5 / 7;
   grid-column: 4;
+}
+
+.blue{
+  background: hsl(208, 42%, 30%);
+}
+.blue:hover{
+  background: hsl(208, 48%, 40%) !important;
+}
+
+.red{
+  background: hsl(0, 22%, 33%);
+}
+.red:hover{
+  background: hsl(0, 26%, 43%) !important;
 }
