@@ -4,7 +4,8 @@ import {
   multiplication,
   division,
   exponentiation,
-  logarithm
+  logarithm,
+  squareRoot
 } from "../../types.ts";
 
 const example = "! Exemplo: 2 + 2";
@@ -16,7 +17,8 @@ export class Calculator{
     "*":   multiplication,
     "/":   division,
     "^":   exponentiation,
-    "log": logarithm
+    "log": logarithm,
+    "√":   squareRoot
   };
 
   static calc(command: string[]): string{
