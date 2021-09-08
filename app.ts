@@ -1,5 +1,4 @@
 import { Calculator, Server } from "./types.ts";
 
-//console.log( Calculator.calc(Deno.args) );
-
-Server.run();
+if(Deno.args.length) console.log( Calculator.calc(Deno.args) );
+else                 Server.run();
