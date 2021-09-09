@@ -1,7 +1,7 @@
 import { WebSocket, isWebSocketCloseEvent } from "https://deno.land/std@0.106.0/ws/mod.ts";
 import { Calculator } from "../types.ts";
 
-export class History{
+export class SocketManager{
   static async run(serverSocket: WebSocket){
     console.log("Novo socket se conectou!");
 

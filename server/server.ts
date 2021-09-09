@@ -1,7 +1,7 @@
 import { serve, ServerRequest }     from "https://deno.land/std@0.106.0/http/server.ts";
 import { serveFile } from "https://deno.land/std@0.106.0/http/file_server.ts";
 import { acceptWebSocket, acceptable } from "https://deno.land/std@0.106.0/ws/mod.ts";
-import { History } from "./history.ts";
+import { SocketManager } from "./socketManager.ts";
 
 export class Server{
   static async run(){
@@ -34,6 +34,6 @@ export class Server{
       bufWriter: request.w,
       headers: request.headers
     })
-    .then(History.run);
+    .then(SocketManager.run);
   }
 }
