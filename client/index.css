@@ -47,6 +47,13 @@ body{
 .but{
   background: hsl(210, 9%, 9%);
 }
+.disabled:hover{
+  background: hsl(210, 9%, 9%) !important;
+  cursor: not-allowed;
+}
+.vir{
+  background: hsl(210, 9%, 9%);
+}
 
 .num{
   background: hsl(240, 12%, 3%);
