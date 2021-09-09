@@ -18,27 +18,28 @@ Deno.test("Calculator.calc() operations with normal conditions", () => {
 Deno.test("Calculator.calc() unexpected inputs", () => {
   const ex = "! Exemplo: 2 + 2";
 
-  const errorNumberOfArgs = "Só aceito 3 argumentos"+ex;
+  const errorNumberOfArgs = "ERRO: Só aceito 3 argumentos"+ex;
   assertEquals(errorNumberOfArgs, Calculator.calc([]));
   assertEquals(errorNumberOfArgs, Calculator.calc(["+", "+"]));
   assertEquals(errorNumberOfArgs, Calculator.calc(["+", "+", "2", "3"]));
 
-  const errorSecondArg = "O segundo argumento precisa ser uma operação"+ex;
+  const errorSecondArg = "ERRO: O segundo argumento precisa ser uma operação"+ex;
   assertEquals(errorSecondArg, Calculator.calc(["2", "2", "2"]));
   assertEquals(errorSecondArg, Calculator.calc(["+", "2", "+"]));
-  const errorFirstArg = "O primeiro argumento precisa ser um número"+ex;
+  const errorFirstArg = "ERRO: O primeiro argumento precisa ser um número"+ex;
   assertEquals(errorFirstArg, Calculator.calc(["+", "+", "2"]));
   assertEquals(errorFirstArg, Calculator.calc(["+", "+", "+"]));
-  assertEquals("O terceiro argumento precisa ser um número"+ex, Calculator.calc(["2", "+", "+"]));
+  assertEquals("ERRO: O terceiro argumento precisa ser um número"+ex, Calculator.calc(["2", "+", "+"]));
   
-  assertEquals("Resultado indefinido!", Calculator.calc(["0",  "/", "0"]));
-  assertEquals("Resultado indefinido!", Calculator.calc(["2",  "/", "0"]));
-  assertEquals("Resultado indefinido!", Calculator.calc(["-2", "/", "0"]));
+  const errorUndefined = "ERRO: Resultado indefinido!";
+  assertEquals(errorUndefined, Calculator.calc(["0",  "/", "0"]));
+  assertEquals(errorUndefined, Calculator.calc(["2",  "/", "0"]));
+  assertEquals(errorUndefined, Calculator.calc(["-2", "/", "0"]));
   
-  assertEquals("Resultado indefinido!", Calculator.calc(["0", "^", "-2"]));
+  assertEquals(errorUndefined, Calculator.calc(["0", "^", "-2"]));
   
-  assertEquals("Resultado indefinido!", Calculator.calc(["0", "log", "0"]));
-  assertEquals("Resultado indefinido!", Calculator.calc(["1", "log", "1"]));
-  assertEquals("Resultado indefinido!", Calculator.calc(["1", "log", "5"]));
-  assertEquals("Resultado indefinido!", Calculator.calc(["1", "log", "0"]));
+  assertEquals(errorUndefined, Calculator.calc(["0", "log", "0"]));
+  assertEquals(errorUndefined, Calculator.calc(["1", "log", "1"]));
+  assertEquals(errorUndefined, Calculator.calc(["1", "log", "5"]));
+  assertEquals(errorUndefined, Calculator.calc(["1", "log", "0"]));
 });
