@@ -1,6 +1,6 @@
 # Calculadora com back-end Deno
 
-### Versão 0.6.2-beta
+### Versão 1.0.0
 
 Projeto para treinar TDD em TypeScript no Deno.
 
@@ -10,9 +10,10 @@ Projeto para treinar TDD em TypeScript no Deno.
 
 - [x] Back-end com os cálculos, executar por comandos no terminal
 - [x] Cálculos: + - * / ^ log raiz
+- [x] Front-end: html + css
+- [x] Front-end: js
+- [x] Websocket para comunicação bilateral front - back
 - [ ] Contador de contas já feitas, salvar em .json
-- [ ] Front-end básico
-- [ ] Websocket para comunicação bilateral front - back
 - [ ] Migrar contador para sqlite
 - [x] Cobertura de testes grande o suficiente
 - [ ] Testes para o front?
@@ -47,5 +48,6 @@ cada commit tem o nome da(s) classe(s) (ou arquivo(s)) afetado(a)(s)
 ---
 
 ### Comandos para rodar o back-end:
-deno run --allow-net app.ts
-deno run --allow-net --allow-read server.ts
+deno run --allow-net --allow-read app.ts
+deno run --allow-net --allow-read app.ts calc 2 + 2
+deno test --allow-read
