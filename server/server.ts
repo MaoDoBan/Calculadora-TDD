@@ -8,7 +8,7 @@ export class Server{
     const server = serve({ port: 8000 });
     console.log("Server running on: http://localhost:8000/");
 
-    for await (const request of server) {
+    for await (const request of server){
       Server.process(request);
     }
   }
