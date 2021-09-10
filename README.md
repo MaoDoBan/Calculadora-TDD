@@ -47,6 +47,9 @@ cada commit tem o nome da(s) classe(s) (ou arquivo(s)) afetado(a)(s)
 
 ---
 
+### Tutorial para instalar o Deno, necessário para executar o código
+https://www.youtube.com/watch?v=2iLeRzHvc10&t=379s
+
 ### Comandos para rodar o back-end:
 deno run --allow-net --allow-read app.ts
 deno run --allow-net --allow-read app.ts calc 2 + 2
